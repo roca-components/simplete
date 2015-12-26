@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "compile": "webpack",
+    "dev": "webpack --progress --colors --watch"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "webpack": "^1.12.9"
+  }
+}
