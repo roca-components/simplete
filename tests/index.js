@@ -1,15 +1,18 @@
 /*eslint-env browser */
+/*eslint-disable indent */
 /*global QUnit */
+
+(function() {
 
 "use strict";
 
 QUnit.module("Simplete", {
-	beforeEach: assert => {
+	beforeEach(assert) {
 		this.fixtures = document.getElementById("qunit-fixture");
 	}
 });
 
-QUnit.test("DOM initialization", assert => {
+QUnit.test("DOM initialization", function(assert) {
 	let field = createElement(`<input is="simplete-box">`);
 
 	assert.strictEqual(field.getAttribute("autocomplete"), "off");
@@ -27,7 +30,7 @@ QUnit.test("DOM initialization", assert => {
 	assert.strictEqual(results.className, "results");
 });
 
-QUnit.test("settings", assert => {
+QUnit.test("settings", function(assert) {
 	let field = createElement(`<input is="simplete-box">`);
 
 	assert.deepEqual(field.settings, {
@@ -54,3 +57,5 @@ function createElement(html) {
 	container.innerHTML = html;
 	return container.children[0];
 }
+
+}());
