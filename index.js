@@ -10,6 +10,7 @@ const DEFAULTS = {
 
 class SimpleteBox extends HTMLInputElement {
 	createdCallback() {
+		this.setAttribute("autocomplete", "off");
 		// parse settings from DOM
 		this.settings = {};
 		this.getSetting("delay", "delay", "integer");

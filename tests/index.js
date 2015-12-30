@@ -11,6 +11,9 @@ QUnit.module("Simplete", {
 
 QUnit.test("DOM initialization", assert => {
 	let field = createElement(`<input is="simplete-box">`);
+
+	assert.strictEqual(field.getAttribute("autocomplete"), "off");
+
 	this.fixtures.appendChild(field);
 
 	let wrapper = this.fixtures.children[0];
@@ -26,6 +29,7 @@ QUnit.test("DOM initialization", assert => {
 
 QUnit.test("settings", assert => {
 	let field = createElement(`<input is="simplete-box">`);
+
 	assert.deepEqual(field.settings, {
 		delay: 250,
 		minLength: 3,
@@ -36,6 +40,7 @@ QUnit.test("settings", assert => {
 	field = createElement(`<input is="simplete-box"
 			data-delay="500"
 			data-item-selector="dt">`);
+
 	assert.deepEqual(field.settings, {
 		delay: 500,
 		minLength: 3,
