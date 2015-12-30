@@ -33,7 +33,7 @@ class SimpleteBox extends HTMLInputElement {
 	}
 
 	getSetting(attr, name, type) {
-		let value = this.getAttribute(attr);
+		let value = this.getAttribute(`data-${attr}`);
 		if(!value) {
 			value = DEFAULTS[name];
 		} else if(type === "integer") {

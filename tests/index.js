@@ -33,8 +33,9 @@ QUnit.test("settings", assert => {
 		selectedClass: "selected"
 	});
 
-	field = createElement(`<input is="simplete-box" delay="500"
-			item-selector="dt">`);
+	field = createElement(`<input is="simplete-box"
+			data-delay="500"
+			data-item-selector="dt">`);
 	assert.deepEqual(field.settings, {
 		delay: 500,
 		minLength: 3,
