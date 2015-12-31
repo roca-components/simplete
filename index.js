@@ -13,10 +13,10 @@ class SimpleteBox extends HTMLInputElement {
 		this.setAttribute("autocomplete", "off");
 		// parse settings from DOM
 		this.settings = {};
-		this.getSetting("delay", "delay", "integer");
-		this.getSetting("min-length", "minLength", "integer");
-		this.getSetting("item-selector", "itemSelector");
-		this.getSetting("selected-class", "selectedClass");
+		this.getSetting("data-delay", "delay", "integer");
+		this.getSetting("data-min-length", "minLength", "integer");
+		this.getSetting("data-item-selector", "itemSelector");
+		this.getSetting("data-selected-class", "selectedClass");
 	}
 
 	attachedCallback() {
@@ -34,7 +34,7 @@ class SimpleteBox extends HTMLInputElement {
 	}
 
 	getSetting(attr, name, type) {
-		let value = this.getAttribute(`data-${attr}`);
+		let value = this.getAttribute(attr);
 		if(!value) {
 			value = DEFAULTS[name];
 		} else if(type === "integer") {
